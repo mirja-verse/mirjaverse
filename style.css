@@ -1,0 +1,257 @@
+/* বেসিক রিসেট */
+:root {
+    --primary-color: #6c5ce7;
+    --bg-body: #f0f2f5;
+    --white: #ffffff;
+    --text-main: #050505;
+    --text-gray: #65676b;
+    --hover-bg: #f2f2f2;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Hind Siliguri', sans-serif;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    background-color: var(--bg-body);
+    color: var(--text-main);
+    padding-top: 100px; /* হেডারের নিচে কন্টেন্ট নামানোর জন্য */
+}
+
+/* ----- হেডার স্টাইল ----- */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: var(--white);
+    z-index: 1000;
+    /* কালো দাগ সরানো হয়েছে, শুধু হালকা শ্যাডো রাখা হয়েছে */
+    box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+}
+
+.top-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    /* বর্ডার সরানো হয়েছে */
+    border: none; 
+}
+
+.logo {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.header-actions {
+    display: flex;
+    gap: 10px;
+    position: relative;
+}
+
+.icon-btn {
+    background: var(--bg-body);
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    color: var(--text-main);
+    cursor: pointer;
+    border: none;
+    transition: 0.2s;
+}
+
+.icon-btn:hover {
+    background: #dcdcdc;
+}
+
+/* ড্রপডাউন মেনু */
+.create-dropdown {
+    position: absolute;
+    top: 50px;
+    right: 0;
+    background: var(--white);
+    width: 220px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    display: none; /* JS দিয়ে শো করা হবে */
+    flex-direction: column;
+    padding: 8px 0;
+}
+
+.create-dropdown.active {
+    display: flex;
+}
+
+.dropdown-item {
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    color: var(--text-main);
+}
+
+.dropdown-item:hover {
+    background: var(--hover-bg);
+}
+
+.dropdown-item i {
+    font-size: 1.1rem;
+    color: var(--text-gray);
+}
+
+/* ন্যাভিগেশন ট্যাব */
+.nav-tabs {
+    display: flex;
+    justify-content: space-between;
+    background: var(--white);
+    /* বর্ডার সরানো হয়েছে */
+    border: none; 
+}
+
+.tab {
+    flex: 1;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 1.4rem;
+    color: var(--text-gray);
+    cursor: pointer;
+    position: relative;
+    background: transparent; /* কোনো ব্যাকগ্রাউন্ড কালার নেই */
+}
+
+/* একটিভ ট্যাবের রং */
+.tab.active {
+    color: var(--primary-color);
+}
+
+.tab:hover {
+    background-color: transparent; /* হোভার কালার সরানো হয়েছে */
+    color: var(--primary-color);
+}
+
+/* ----- ফিড এরিয়া ----- */
+.main-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.post-card {
+    background: var(--white);
+    margin-bottom: 10px;
+    padding-top: 12px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.post-header {
+    padding: 0 15px 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.user-profile img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.user-details h3 {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.user-details span {
+    font-size: 0.75rem;
+    color: var(--text-gray);
+}
+
+.more-btn {
+    background: transparent;
+    border: none;
+    font-size: 1.2rem;
+    color: var(--text-gray);
+    cursor: pointer;
+}
+
+.post-text {
+    padding: 0 15px 10px 15px;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+.post-image-container {
+    width: 100%;
+    background: #000;
+    display: flex;
+    justify-content: center;
+}
+
+.post-image-container img {
+    width: 100%;
+    max-height: 600px;
+    object-fit: contain;
+    display: block;
+}
+
+.post-stats {
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    color: var(--text-gray);
+    font-size: 0.85rem;
+    border-bottom: 1px solid #f0f0f0; /* পোস্টের ভেতরের হালকা দাগ */
+}
+
+.icon-like { color: var(--primary-color); }
+.icon-love { color: #e41e3f; }
+
+.action-buttons {
+    display: flex;
+    justify-content: space-around;
+    padding: 5px 0;
+}
+
+.action-btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 8px 0;
+    color: var(--text-gray);
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    background: transparent;
+}
+
+.action-btn:active {
+    background: var(--hover-bg);
+}
+
+/* রেসপন্সিভ */
+@media (max-width: 600px) {
+    .main-container {
+        max-width: 100%;
+    }
+}

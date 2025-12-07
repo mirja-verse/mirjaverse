@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mirjaVerse</title>
+    <!-- ফন্ট এবং আইকন -->
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- আমাদের কাস্টম CSS ফাইল লিঙ্ক -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- হেডার সেকশন -->
+    <header>
+        <!-- টপ বার -->
+        <div class="top-header">
+            <div class="logo">মির্জা ভার্স</div>
+            
+            <div class="header-actions">
+                <button class="icon-btn"><i class="fas fa-search"></i></button>
+                
+                <!-- পোস্ট তৈরি করার বাটন -->
+                <button class="icon-btn" id="createPostBtn">
+                    <i class="fas fa-plus"></i>
+                </button>
+
+                <!-- ড্রপডাউন মেনু -->
+                <div class="create-dropdown" id="postDropdown">
+                    <div class="dropdown-item">
+                        <i class="fas fa-pen"></i> পোস্ট লিখুন
+                    </div>
+                    <div class="dropdown-item">
+                        <i class="fas fa-image"></i> ছবি আপলোড
+                    </div>
+                    <div class="dropdown-item">
+                        <i class="fas fa-video"></i> লাইভ ভিডিও
+                    </div>
+                </div>
+
+                <button class="icon-btn"><i class="fas fa-bars"></i></button>
+            </div>
+        </div>
+
+        <!-- নেভিগেশন ট্যাব বার -->
+        <div class="nav-tabs">
+            <div class="tab active"><i class="fas fa-home"></i></div>
+            <div class="tab"><i class="fas fa-user-friends"></i></div>
+            <div class="tab"><i class="fab fa-facebook-messenger"></i></div>
+            <div class="tab"><i class="fas fa-video"></i></div>
+            <div class="tab"><i class="fas fa-bell"></i></div>
+        </div>
+    </header>
+
+    <!-- মেইন কন্টেন্ট ফিড -->
+    <div class="main-container">
+
+        <!-- পোস্ট ১ -->
+        <div class="post-card">
+            <div class="post-header">
+                <div class="user-profile">
+                    <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=100" alt="User">
+                    <div class="user-details">
+                        <h3>মির্জা আয়ান</h3>
+                        <span>২ ঘণ্টা আগে <i class="fas fa-globe-asia"></i></span>
+                    </div>
+                </div>
+                <button class="more-btn"><i class="fas fa-ellipsis-h"></i></button>
+            </div>
+            <div class="post-text">
+                আজকের আবহাওয়াটা চমৎকার! মির্জা ভার্সে সবাইকে স্বাগতম। 💜 #MirzaVerse
+            </div>
+            <div class="post-image-container">
+                <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=600" alt="Nature">
+            </div>
+            <div class="post-stats">
+                <span><i class="fas fa-thumbs-up icon-like"></i> ১.২k</span>
+                <span>৪৫টি মন্তব্য • ১০টি শেয়ার</span>
+            </div>
+            <div class="action-buttons">
+                <div class="action-btn"><i class="far fa-thumbs-up"></i> লাইক</div>
+                <div class="action-btn"><i class="far fa-comment-alt"></i> মন্তব্য</div>
+                <div class="action-btn"><i class="fas fa-share"></i> শেয়ার</div>
+            </div>
+        </div>
+
+        <!-- পোস্ট ২ -->
+        <div class="post-card">
+            <div class="post-header">
+                <div class="user-profile">
+                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100" alt="User">
+                    <div class="user-details">
+                        <h3>সামিয়া ইসলাম</h3>
+                        <span>৫ ঘণ্টা আগে <i class="fas fa-globe-asia"></i></span>
+                    </div>
+                </div>
+                <button class="more-btn"><i class="fas fa-ellipsis-h"></i></button>
+            </div>
+            <div class="post-text">
+                নতুন প্রোফাইল পিকচার কেমন হলো বন্ধুরা? 😊
+            </div>
+            <div class="post-image-container">
+                <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?w=600" alt="Portrait">
+            </div>
+            <div class="post-stats">
+                <span><i class="fas fa-heart icon-love"></i> ৫৪০</span>
+                <span>২০টি মন্তব্য</span>
+            </div>
+            <div class="action-buttons">
+                <div class="action-btn"><i class="far fa-thumbs-up"></i> লাইক</div>
+                <div class="action-btn"><i class="far fa-comment-alt"></i> মন্তব্য</div>
+                <div class="action-btn"><i class="fas fa-share"></i> শেয়ার</div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- আমাদের কাস্টম জাভাস্ক্রিপ্ট ফাইল লিঙ্ক -->
+    <script src="script.js"></script>
+</body>
+</html>
