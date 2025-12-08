@@ -35,8 +35,6 @@ document.addEventListener('DOMContentLoaded', function() {
     
     actionBtns.forEach(btn => {
         btn.addEventListener('click', function() {
-            // এখানে আপনি চাইলে আরও লজিক এড করতে পারেন
-            // বর্তমানে শুধু একটি ইফেক্ট দেখানোর জন্য কালার চেঞ্জ করা হলো
             if(this.style.color === 'var(--primary-color)') {
                 this.style.color = 'var(--text-gray)';
             } else {

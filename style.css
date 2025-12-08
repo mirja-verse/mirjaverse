@@ -1,4 +1,4 @@
-/* বেসিক রিসেট */
+/* --- বেসিক রিসেট --- */
 :root {
     --primary-color: #6c5ce7;
     --bg-body: #f0f2f5;
@@ -19,10 +19,10 @@
 body {
     background-color: var(--bg-body);
     color: var(--text-main);
-    padding-top: 100px; /* হেডারের নিচে কন্টেন্ট নামানোর জন্য */
+    padding-top: 100px;
 }
 
-/* ----- হেডার স্টাইল ----- */
+/* --- হেডার স্টাইল --- */
 header {
     position: fixed;
     top: 0;
@@ -30,7 +30,6 @@ header {
     width: 100%;
     background: var(--white);
     z-index: 1000;
-    /* কালো দাগ সরানো হয়েছে, শুধু হালকা শ্যাডো রাখা হয়েছে */
     box-shadow: 0 1px 4px rgba(0,0,0,0.05);
 }
 
@@ -39,8 +38,6 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 10px 15px;
-    /* বর্ডার সরানো হয়েছে */
-    border: none; 
 }
 
 .logo {
@@ -52,6 +49,7 @@ header {
 .header-actions {
     display: flex;
     gap: 10px;
+    align-items: center;
     position: relative;
 }
 
@@ -70,27 +68,41 @@ header {
     transition: 0.2s;
 }
 
-.icon-btn:hover {
-    background: #dcdcdc;
+.icon-btn:hover { background: #dcdcdc; }
+
+/* ✅ হেডার প্রোফাইল বাটন স্টাইল */
+.header-profile-link {
+    display: block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-left: 5px;
+    border: 2px solid var(--bg-body);
+    cursor: pointer;
+}
+
+.header-profile-link img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 /* ড্রপডাউন মেনু */
 .create-dropdown {
     position: absolute;
     top: 50px;
-    right: 0;
+    right: 40px;
     background: var(--white);
     width: 220px;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    display: none; /* JS দিয়ে শো করা হবে */
+    display: none;
     flex-direction: column;
     padding: 8px 0;
 }
 
-.create-dropdown.active {
-    display: flex;
-}
+.create-dropdown.active { display: flex; }
 
 .dropdown-item {
     padding: 10px 15px;
@@ -102,22 +114,14 @@ header {
     color: var(--text-main);
 }
 
-.dropdown-item:hover {
-    background: var(--hover-bg);
-}
-
-.dropdown-item i {
-    font-size: 1.1rem;
-    color: var(--text-gray);
-}
+.dropdown-item:hover { background: var(--hover-bg); }
+.dropdown-item i { font-size: 1.1rem; color: var(--text-gray); }
 
 /* ন্যাভিগেশন ট্যাব */
 .nav-tabs {
     display: flex;
     justify-content: space-between;
     background: var(--white);
-    /* বর্ডার সরানো হয়েছে */
-    border: none; 
 }
 
 .tab {
@@ -127,21 +131,11 @@ header {
     font-size: 1.4rem;
     color: var(--text-gray);
     cursor: pointer;
-    position: relative;
-    background: transparent; /* কোনো ব্যাকগ্রাউন্ড কালার নেই */
 }
 
-/* একটিভ ট্যাবের রং */
-.tab.active {
-    color: var(--primary-color);
-}
+.tab.active, .tab:hover { color: var(--primary-color); }
 
-.tab:hover {
-    background-color: transparent; /* হোভার কালার সরানো হয়েছে */
-    color: var(--primary-color);
-}
-
-/* ----- ফিড এরিয়া ----- */
+/* --- ফিড এরিয়া (হোম পেজ) --- */
 .main-container {
     width: 100%;
     max-width: 600px;
@@ -150,9 +144,10 @@ header {
 
 .post-card {
     background: var(--white);
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     padding-top: 12px;
     box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    border-radius: 8px;
 }
 
 .post-header {
@@ -175,15 +170,8 @@ header {
     object-fit: cover;
 }
 
-.user-details h3 {
-    font-size: 1rem;
-    font-weight: 600;
-}
-
-.user-details span {
-    font-size: 0.75rem;
-    color: var(--text-gray);
-}
+.user-details h3 { font-size: 1rem; font-weight: 600; }
+.user-details span { font-size: 0.75rem; color: var(--text-gray); }
 
 .more-btn {
     background: transparent;
@@ -210,7 +198,6 @@ header {
     width: 100%;
     max-height: 600px;
     object-fit: contain;
-    display: block;
 }
 
 .post-stats {
@@ -219,7 +206,7 @@ header {
     justify-content: space-between;
     color: var(--text-gray);
     font-size: 0.85rem;
-    border-bottom: 1px solid #f0f0f0; /* পোস্টের ভেতরের হালকা দাগ */
+    border-bottom: 1px solid #f0f0f0;
 }
 
 .icon-like { color: var(--primary-color); }
@@ -245,13 +232,147 @@ header {
     background: transparent;
 }
 
-.action-btn:active {
-    background: var(--hover-bg);
+.action-btn:active { background: var(--hover-bg); }
+
+/* --- ✅ প্রোফাইল পেইজ ডিজাইন --- */
+.profile-container {
+    background: var(--white);
+    max-width: 900px;
+    margin: 0 auto 20px auto;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    padding-bottom: 10px;
 }
 
+.cover-photo-section {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    background: linear-gradient(45deg, #6c5ce7, #a29bfe);
+    border-radius: 0 0 10px 10px;
+    overflow: hidden;
+}
+
+.cover-photo-section img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-picture-section {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-top: -80px;
+    z-index: 10;
+}
+
+.big-profile-pic {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    border: 5px solid var(--white);
+    overflow: hidden;
+    background: var(--white);
+}
+
+.big-profile-pic img { width: 100%; height: 100%; object-fit: cover; }
+
+.profile-info-section { text-align: center; padding: 15px 20px; }
+.profile-name { font-size: 2rem; font-weight: 700; margin-bottom: 5px; }
+.profile-bio { color: var(--text-gray); font-size: 1rem; max-width: 500px; margin: 0 auto 15px auto; }
+
+.profile-actions {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.btn-primary {
+    background: var(--primary-color);
+    color: var(--white);
+    padding: 10px 25px;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-secondary {
+    background: #e4e6eb;
+    color: var(--text-main);
+    padding: 10px 25px;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.profile-divider { border-top: 1px solid #ddd; margin: 0 20px; }
+
+.profile-menu {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 15px 0;
+}
+
+.menu-item {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-gray);
+    cursor: pointer;
+    padding: 5px 10px;
+}
+
+.menu-item.active {
+    color: var(--primary-color);
+    border-bottom: 3px solid var(--primary-color);
+}
+
+/* প্রোফাইল কন্টেন্ট লেআউট */
+.profile-content-area {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    gap: 15px;
+    padding: 0 10px;
+}
+
+.intro-card {
+    flex: 1;
+    background: var(--white);
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    height: fit-content;
+}
+
+.intro-title { font-size: 1.2rem; font-weight: 700; margin-bottom: 15px; }
+
+.info-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+    color: var(--text-main);
+    font-size: 0.95rem;
+}
+
+.feed-section { flex: 2; }
+
 /* রেসপন্সিভ */
-@media (max-width: 600px) {
-    .main-container {
-        max-width: 100%;
-    }
+@media (max-width: 700px) {
+    .main-container { max-width: 100%; }
+    .profile-content-area { flex-direction: column; }
+    .big-profile-pic { width: 130px; height: 130px; }
+    .profile-name { font-size: 1.5rem; }
 }
